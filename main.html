@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>HTML-JS-Assignment</title>
+</head>
+<body>
+<form>
+    Input Text Here: <input type = "text" id = "txtInput">   
+</form>
+<h1>This is a Heading</h1>
+<p>This is a paragraph.</p>
+
+</body>
+<script>
+    const text = document.getElementById("txtInput")
+
+    function get(){
+        let count = 0; //let for variable
+        const input = text.value;
+        for(let i = 0; i < input.length; i++){
+            if(input.charAt(i).match(/^[A-Za-z]$/)){ //correct match and regex
+                count++;
+            }
+        }
+        return count;
+    }
+
+    text.addEventListener("keypress", function (event) {
+        if (event.keyCode == 13) {
+            let count = get();
+            alert("Button code executed. " + count);
+         }
+    });
+</script>
+</html>
