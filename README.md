@@ -1,2 +1,2 @@
-# JS-Assignment
+# HTML-JS-Assignment
 Check my newly gained html and js capabilities
