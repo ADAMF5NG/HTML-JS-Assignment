@@ -1,35 +1,43 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>HTML-JS-Assignment</title>
+    <title>HTML-JS-Assignment</title>
 </head>
 <body>
-<form>
-    Input Text Here: <input type = "text" id = "txtInput">   
-</form>
-<h1>This is a Heading</h1>
-<p>This is a paragraph.</p>
+    <h2 style="text-align: center">
+        LAB 0 Proramming Assignment
+    </h2>
+    <h5 style="text-align: center">
+        SpellCheck works when typing in text box and detects if there are too many instances of a letter (3 or more consecutively)
+        <br>
+        <br>
+        The spellcheck attribute is turned to true for browser spellcheck while typing
+    </h5>
+    <form style="text-align: center">
+        Input Text Here: <input type = "text" id = "txtInput" spellcheck="true">   
+    </form>
 
+       
+    <div style="text-align: center">
+        <br>        
+        <div id="Entry" style="display: none" spellcheck="true"></div>
+
+        <div id="SpellCheck" style="display: none" spellcheck="true"></div>
+
+        <div id="Non-WhiteSpace Characters" style="display: none" spellcheck="true"></div>
+
+        <div id="White Spaces" style="display: none" spellcheck="true"></div>
+
+        <div id="Word Count" style="display: none" spellcheck="true"></div>
+    </div>
+    <div >      
+        <table id="charInst" style="display: none; margin-left:auto; margin-right: auto" border="1">
+            <tr>
+                <th>Character</th>
+                <th>Appearances</th>
+            </tr>
+        </table>
+    </div>
+    <script type="text/javascript" src="checker.js"> </script>
 </body>
-<script>
-    const text = document.getElementById("txtInput")
-
-    function get(){
-        let count = 0; //let for variable
-        const input = text.value;
-        for(let i = 0; i < input.length; i++){
-            if(input.charAt(i).match(/^[A-Za-z]$/)){ //correct match and regex
-                count++;
-            }
-        }
-        return count;
-    }
-
-    text.addEventListener("keypress", function (event) {
-        if (event.keyCode == 13) {
-            let count = get();
-            alert("Button code executed. " + count);
-         }
-    });
-</script>
 </html>
